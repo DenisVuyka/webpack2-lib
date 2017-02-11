@@ -30,11 +30,9 @@ module.exports = function (config) {
             remapOptions: {}, //additional remap options
             reportOptions: {}, //additional report options
             reports: {
-                // lcovonly: './coverage/lcov.info',
-                //html: './coverage'
-                json: 'coverage/coverage-final.json',
-                html: 'coverage/html',
-                // 'text-summary': null
+                'html': './coverage',
+                // 'text-summary': null,
+                'lcovonly': './coverage/lcov.info'
             }
         },
         port: 9876,
