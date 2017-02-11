@@ -1,5 +1,6 @@
 const webpack = require('webpack');
 const path = require('path');
+const helpers = require('./helpers');
 
 module.exports = {
     devtool: 'inline-source-map',
@@ -25,12 +26,12 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                exclude: path.join(__dirname, 'src'),
+                exclude: helpers.root('src'),
                 loader: 'null-loader'
             },
             {
                 test: /\.css$/,
-                include: path.join(__dirname, 'src'),
+                include: helpers.root('src'),
                 loader: 'raw-loader'
             }
         ]
