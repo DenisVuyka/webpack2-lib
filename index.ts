@@ -3,7 +3,7 @@ import { HelloWorldComponent } from './src/components/hello-world.component';
 
 @NgModule({
     declarations: [HelloWorldComponent],
-    bootstrap: [HelloWorldComponent]
+    exports: [HelloWorldComponent]
 })
 export class WebpackLibModule {
 }
