@@ -4,7 +4,8 @@
   "description": "",
   "main": "dist/bundle.js",
   "scripts": {
-    "build": "rimraf dist && webpack --config webpack.config.js --progress --profile --bail"
+    "build": "rimraf dist && webpack --config webpack.config.js --progress --profile --bail",
+    "test": "karma start"
   },
   "author": "Denys Vuika",
   "license": "MIT",
@@ -30,6 +31,15 @@
     "angular2-template-loader": "^0.6.2",
     "file-loader": "^0.10.0",
     "html-loader": "^0.4.4",
+    "jasmine-core": "^2.5.2",
+    "karma": "^1.4.1",
+    "karma-jasmine": "^1.1.0",
+    "karma-mocha-reporter": "^2.2.2",
+    "karma-phantomjs-launcher": "^1.0.2",
+    "karma-sourcemap-loader": "^0.3.7",
+    "karma-webpack": "^2.0.2",
+    "null-loader": "^0.1.1",
+    "phantomjs-prebuilt": "^2.1.14",
     "raw-loader": "^0.5.1",
     "rimraf": "^2.5.4",
     "source-map-loader": "^0.1.6",
