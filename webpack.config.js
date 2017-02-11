@@ -50,19 +50,27 @@ module.exports = {
     },
 
     plugins: [
+        new webpack.NoEmitOnErrorsPlugin(),
+
         // Workaround for angular/angular#11580
         new webpack.ContextReplacementPlugin(
             // The (\\|\/) piece accounts for path separators in *nix and Windows
             /angular(\\|\/)core(\\|\/)(esm(\\|\/)src|src)(\\|\/)linker/,
             path.join(__dirname, 'src'), // location of your src
             {} // a map of your routes
-        )/*,
+        ),
 
         new webpack.optimize.UglifyJsPlugin({ // https://github.com/angular/angular/issues/10618
             mangle: {
                 keep_fnames: true
             }
-        })*/
+        }),
+
+        new webpack.LoaderOptionsPlugin({
+            htmlLoader: {
+                minimize: false // workaround for ng2
+            }
+        })
     ],
 
     devtool: 'source-map',
