@@ -11,7 +11,8 @@ module.exports = function (config) {
         ],
 
         preprocessors: {
-            './config/karma-test-shim.js': ['webpack', 'sourcemap']
+            './config/karma-test-shim.js': ['webpack', 'sourcemap'],
+            'src/**/!(*spec).js': ['coverage']
         },
 
         webpack: webpackConfig,
@@ -24,7 +25,18 @@ module.exports = function (config) {
             noInfo: true
         },
 
-        reporters: ['mocha'],
+        reporters: ['mocha', 'karma-remap-istanbul', 'karma-remap-istanbul'],
+        remapIstanbulReporter: {
+            remapOptions: {}, //additional remap options
+            reportOptions: {}, //additional report options
+            reports: {
+                // lcovonly: './coverage/lcov.info',
+                //html: './coverage'
+                json: 'coverage/coverage-final.json',
+                html: 'coverage/html',
+                // 'text-summary': null
+            }
+        },
         port: 9876,
         colors: true,
         logLevel: config.LOG_INFO,

@@ -5,7 +5,7 @@
   "main": "dist/bundle.js",
   "scripts": {
     "build": "rimraf dist && webpack --config webpack.config.js --progress --profile --bail",
-    "test": "karma start"
+    "test": "rimraf coverage && karma start"
   },
   "author": "Denys Vuika",
   "license": "MIT",
@@ -33,9 +33,11 @@
     "html-loader": "^0.4.4",
     "jasmine-core": "^2.5.2",
     "karma": "^1.4.1",
+    "karma-coverage": "^1.1.1",
     "karma-jasmine": "^1.1.0",
     "karma-mocha-reporter": "^2.2.2",
     "karma-phantomjs-launcher": "^1.0.2",
+    "karma-remap-istanbul": "^0.6.0",
     "karma-sourcemap-loader": "^0.3.7",
     "karma-webpack": "^2.0.2",
     "null-loader": "^0.1.1",
@@ -43,6 +45,7 @@
     "raw-loader": "^0.5.1",
     "rimraf": "^2.5.4",
     "source-map-loader": "^0.1.6",
+    "sourcemap-istanbul-instrumenter-loader": "^0.2.0",
     "ts-loader": "^2.0.0",
     "tslint": "^4.4.2",
     "tslint-loader": "^3.3.0",

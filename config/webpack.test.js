@@ -33,6 +33,12 @@ module.exports = {
                 test: /\.css$/,
                 include: helpers.root('src'),
                 loader: 'raw-loader'
+            },
+            {
+                test: /src\/.+\.ts$/,
+                exclude: /(node_modules|\.spec\.ts$)/,
+                loader: 'sourcemap-istanbul-instrumenter-loader?force-sourcemap=true',
+                enforce: 'post'
             }
         ]
     },
