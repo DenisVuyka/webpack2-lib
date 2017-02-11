@@ -1,8 +1,9 @@
-export class Logger {
-    log(message: string) {
-        console.log(message);
-    }
-}
+import { NgModule } from '@angular/core';
+import { HelloWorldComponent } from './src/components/hello-world.component';
 
-let logger = new Logger();
-logger.log('hello there');
+@NgModule({
+    declarations: [HelloWorldComponent],
+    bootstrap: [HelloWorldComponent]
+})
+export class WebpackLibModule {
+}

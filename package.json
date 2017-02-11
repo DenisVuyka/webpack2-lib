@@ -2,7 +2,7 @@
   "name": "webpack2-lib",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/bundle.js",
   "scripts": {
     "build": "rimraf dist && webpack --config webpack.config.js --progress --profile --bail"
   },
