@@ -22,13 +22,22 @@ module.exports = {
             },
             {
                 enforce: 'pre',
-                test: /\.tsx?$/,
+                test: /\.ts$/,
                 use: "source-map-loader"
             },
             {
                 test: /\.ts$/,
-                loader: 'ts-loader',
+                use: ['ts-loader', 'angular2-template-loader'],
                 exclude: /node_modules/,
+            },
+            {
+                test: /\.html$/,
+                loader: 'html-loader'
+            },
+            {
+                test: /\.css$/,
+                include: path.join(__dirname, 'src'),
+                loader: 'raw-loader'
             },
         ]
     },
@@ -43,7 +52,13 @@ module.exports = {
             /angular(\\|\/)core(\\|\/)(esm(\\|\/)src|src)(\\|\/)linker/,
             path.join(__dirname, 'src'), // location of your src
             {} // a map of your routes
-        )
+        )/*,
+
+        new webpack.optimize.UglifyJsPlugin({ // https://github.com/angular/angular/issues/10618
+            mangle: {
+                keep_fnames: true
+            }
+        })*/
     ],
 
     devtool: 'source-map',
