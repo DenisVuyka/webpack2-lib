@@ -31,7 +31,7 @@ module.exports = function (config) {
             reportOptions: {}, //additional report options
             reports: {
                 'html': './coverage',
-                // 'text-summary': null,
+                'text-summary': null, // to show summary in console
                 'lcovonly': './coverage/lcov.info'
             }
         },
