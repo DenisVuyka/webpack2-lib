@@ -70,6 +70,12 @@ module.exports = {
             mangle: {
                 keep_fnames: true
             },
+            compress: {
+                warnings: false
+            },
+            output: {
+                comments: false
+            },
             sourceMap: true
         }),
 
