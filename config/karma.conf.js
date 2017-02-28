@@ -25,7 +25,7 @@ module.exports = function (config) {
             noInfo: true
         },
 
-        reporters: ['mocha', 'karma-remap-istanbul', 'karma-remap-istanbul'],
+        reporters: ['mocha', 'karma-remap-istanbul'],
         remapIstanbulReporter: {
             remapOptions: {}, //additional remap options
             reportOptions: {}, //additional report options
